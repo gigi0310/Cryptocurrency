@@ -1,31 +1,37 @@
 import React from 'react'
+import './Coin.css'
+
 
 const Coin = ({rank, name, image, symbol, price, volume, priceChange, marketcap}) => {
+
     return (
-        <div className='coin-container'>
-            <div className="coin-row">
-                <div className="coin">
-                    <p className="coin-rank">{rank}</p>
-                    <img src={image} alt="crypto" />
-                    <h1>{name}</h1>
-                    <p className='coin-symbol'>{symbol}</p>
-                </div>
-                <div className="coin-data">
-                    
-                    <p className="coin-price">${price}</p>
-                    <p className="coin-volume">${volume.toLocaleString()}</p>
-                    {priceChange < 0 ? (
-                        <p className="coin-percent red">{priceChange.toFixed(2)}%</p>
-                    ) : (
-                        <p className="coin-percent green">{priceChange.toFixed(2)}%</p>
-                    )}
-                    <p className="coin-marketcap">
-                        Mkt Cap: ${marketcap.toLocaleString()}
-                    </p>
-                </div>
-            </div>
-        </div>
-    )
-}
+        <tr>
+            <td>
+                <p className="coin-rank">{rank}</p>
+            </td>
+            <td>
+                <img src={image} alt="crypto" /> 
+            </td>
+            <td>
+                <h1>{name}</h1>
+            </td>
+            <td>
+                <p className='coin-symbol'>{symbol}</p> 
+            </td>
+            <td>
+                ${price.toLocaleString()}
+            </td>
+            <td>
+                {priceChange < 0 ? (<p className="coin-percent red">{priceChange.toFixed(2)}%</p>) : (<p className="coin-percent green">{priceChange.toFixed(2)}%</p>
+                )}
+            </td>
+            <td>
+                ${volume.toLocaleString()}
+            </td>
+            <td>
+                Mkt Cap: ${marketcap.toLocaleString()}
+            </td>
+        </tr>
+)};
 
 export default Coin

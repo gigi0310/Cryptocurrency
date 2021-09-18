@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import './App.css';
-import Coin from "./Coin";
+import CoinTable from "./CoinTable";
 
 
 
@@ -16,7 +16,7 @@ function App() {
         const res = await axios.get ('https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&sparkline=false') 
 
         setCoins(res.data);
-        console.log(res.data);
+        
       } catch (err) {
         alert("There is an error");
       }
@@ -40,21 +40,8 @@ function App() {
           <input type="text" className="coin-input" placeholder="Search" onChange={handleChange} />
         </form>
       </div>
-      {filteredCoins.map(coin =>{
-        return (
-          <Coin 
-            key={coin.id} 
-            rank = {coin.market_cap_rank}
-            name={coin.name} 
-            image={coin.image} 
-            symbol={coin.symbol} 
-            marketcap={coin.market_cap}
-            price = {coin.current_price}
-            priceChange = {coin.price_change_percentage_24h}
-            volume = {coin.total_volume}
-          />);
-        
-      })}
+
+      {<CoinTable coins={filteredCoins}/>}
     </div>
 
   );
