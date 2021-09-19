@@ -1,21 +1,37 @@
-// __tests__/fetch.test.js
-import React from 'react';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
-import {
-  render, fireEvent, waitFor, screen,
-} from '@testing-library/react';
-import '@testing-library/jest-dom';
-import App from './App';
+// import React from 'react';
+// import axios from 'axios';
+// import {
+//   render, screen,
+// } from '@testing-library/react';
+// import '@testing-library/jest-dom';
+import { initalState, pagination, filteredCoins } from './App';
 
-const server = setupServer(
-  rest.get('/greeting', (req, res, ctx) => res(ctx.json({ greeting: 'hello there' }))),
-);
+jest.mock('axios');
 
-beforeAll(() => server.listen());
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
+// test('render app', async () => {
+//   render(<App />);
+// });
 
-test('loads and displays greeting', async () => {
-  render(<App />);
+test('initalState', () => {
+  expect(initalState()).toEqual({
+    coins: [],
+    paginatedCoins: [],
+    pages: [],
+    currentPage: 1,
+    search: '',
+    isLoaded: false,
+    alertShowed: false,
+  });
+});
+
+test('pagination show only first 10 items', () => {
+  expect(pagination(1, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'])).toEqual(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']);
+});
+
+// 1. know what the function doing
+// 2. what needs to test
+// 3. what expect to return
+
+test('filteredCoins with query', () => {
+  expect(filteredCoins('a', [{ name: 'ab', symbol: 'abcoin' }])).toEqual([{ name: 'ab', symbol: 'abcoin' }]);
 });

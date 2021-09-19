@@ -1,10 +1,11 @@
 import React from 'react';
 import './Coin.css';
+import Table from 'react-bootstrap/Table';
 import Coin from './Coin';
 import CoinHeader from './CoinHeader';
 
 const CoinTable = ({ coins }) => (
-  <table className="table">
+  <Table hover responsive="lg">
     <CoinHeader />
     <tbody>
       {coins.map((coin) => (
@@ -23,7 +24,7 @@ const CoinTable = ({ coins }) => (
         />
       ))}
     </tbody>
-  </table>
+  </Table>
 );
 
 export default CoinTable;
