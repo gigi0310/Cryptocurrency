@@ -3,7 +3,7 @@
 
 ## App Deployment
 
-Visit the App here - [Coin100x](https://cryptocurrency-au.herokuapp.com/), or you can also find the GitHub repo - [GitHub](https://github.com/gigi0310/Cryptocurrency)
+Visit the App here - [Cryptocurrency](https://cryptocurrency-au.herokuapp.com/), or you can also find the GitHub repo - [GitHub](https://github.com/gigi0310/Cryptocurrency)
 
 
 ## App Description
@@ -19,9 +19,9 @@ This App provides coins rank, name, symbol, prices, price change in 1h/24h/7d by
 * Paginating 10 coins per page
 
 
-## App Viewa
+## App View
 
-### Landing Page
+### Home Page
 
 ![picture](/AppLandingPage.png)
 
@@ -35,7 +35,7 @@ This App provides coins rank, name, symbol, prices, price change in 1h/24h/7d by
 
 * Jest
 * ReactJs
-* Loadash
+* Lodash
 * Axios
 * HTML5
 * CSS3
