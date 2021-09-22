@@ -46,7 +46,7 @@ This App provides coins rank, name, symbol, prices, price change in 1h/24h/7d by
 * GitHub
 
 
-### How to Install Coin100x
+### How to Install
 
 - Fork and Clone this repository
 - In the directory, run npm install
