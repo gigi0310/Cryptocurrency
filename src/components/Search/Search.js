@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from "react";
 
 const Search = ({ onSearch }) => {
-  const [search, setSearch] = useState('');
   const onInputChange = (value) => {
-    setSearch(value);
     onSearch(value);
   };
   return (
@@ -14,7 +12,6 @@ const Search = ({ onSearch }) => {
           type="text"
           className="coin-input"
           placeholder="Search"
-          value={search}
           onChange={(e) => onInputChange(e.target.value)}
         />
       </form>

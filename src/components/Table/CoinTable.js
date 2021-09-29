@@ -1,12 +1,16 @@
-import React from 'react';
-import './Coin.css';
-import Table from 'react-bootstrap/Table';
-import Coin from './Coin';
-import CoinHeader from './CoinHeader';
+import React from "react";
+import "./Coin.css";
+import Table from "react-bootstrap/Table";
+import Coin from "./Coin";
+import CoinHeader from "./CoinHeader";
 
-const CoinTable = ({ coins }) => (
+const CoinTable = ({ coins, sortByRank, sortByCoin, sortByPrice }) => (
   <Table hover responsive="lg">
-    <CoinHeader />
+    <CoinHeader
+      sortByCoin={sortByCoin}
+      sortByRank={sortByRank}
+      sortByPrice={sortByPrice}
+    />
     <tbody>
       {coins.map((coin) => (
         <Coin
