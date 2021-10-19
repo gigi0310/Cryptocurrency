@@ -41,5 +41,5 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "cryptocurrency-au" #Must be unique in Heroku
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
-          branch: "main"
+          heroku_email: ${{secrets.HEROKU_USERNAME}}
+      - run: heroku auth:whoami
