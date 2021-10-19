@@ -33,6 +33,7 @@ jobs:
       - run: npm test
 
   deploy-heroku:
+    needs: build
     runs-on: ubuntu-latest
     environment: dev
     steps:
