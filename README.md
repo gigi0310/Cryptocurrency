@@ -40,7 +40,7 @@ This App provides coins rank, name, symbol, prices, price change in 1h/24h/7d by
 - ESLint + Prettier
 - Heroku
 - Git
-- GitHub
+- GitHub Action
 
 ### How to Install
 
